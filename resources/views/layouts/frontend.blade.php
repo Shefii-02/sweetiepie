@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mysweetiepie</title>
-
-
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/Fav/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Fav/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Fav/favicon-16x16.png">
-  <link rel="manifest" href="assets/images/Fav/site.webmanifest">
-  <link rel="mask-icon" href="assets/images/Fav/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="keywords" content="@yield('keywords')">
+  <meta name="description" content="@yield('description')">
+  <meta name="token" content="{{csrf_token()}}">
+  <title>@yield('title') My SweetiePie</title>
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/images/Fav/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/Fav/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/Fav/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ asset('assets/images/Fav/site.webmanifest') }}">
+  <link rel="mask-icon" href="{{ asset('assets/images/Fav/safari-pinned-tab.svg') }}" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+  <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
-
 </head>
-
-
-
 <body>
   <header>
     <div class="container">
@@ -51,7 +45,9 @@
                   </div>
 
                   <div class="offcanvas-body">
-                    <ul>
+
+                    {!!getMenu('main-menu',['id'=>'header-wr'])!!} 
+                    {{-- <ul>
 
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -91,7 +87,7 @@
                       <li>
                         <a href="wholesale">WHOLESALE</a>
                       </li>
-                    </ul>
+                    </ul> --}}
 
                     <div class="social-links">
                       <ul>
@@ -122,31 +118,18 @@
                     </div>
                   </div>
                 </div>
-
               </li>
               <li>
-
                 <a href="index"><img src="assets/images/logo.png" alt="logo" /></a>
-
               </li>
             </div>
             <div class="second-li-div">
-
-
-
               <li>
                 <a href="#"><i class="bi bi-geo-alt"></i> FIND A SWEETIEPIE</a>
               </li>
               <li>
                 <a href="category">ORDER NOW</a>
               </li>
-
-
-
-
-
-
-
             </div>
           </ul>
         </div>
@@ -349,7 +332,7 @@
     crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-<script src="assets/js/script.js"></script>
+<script src="{{ asset('assets/js/script.js') }}"></script>
 
 </body>
 

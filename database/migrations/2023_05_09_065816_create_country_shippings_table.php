@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('store_timimgs', function (Blueprint $table) {
-            $table->id();
-            $table->string('day')->nullable();
-            $table->string('store_id')->nullable();
-            $table->string('open')->nullable();
-            $table->string('close')->nullable();
+        Schema::create('country_shippings', function (Blueprint $table) {
+            $table->id();   
+            $table->string('province')->nullable();
+            $table->string('country')->nullable();
+            $table->string('shipping_id')->nullable();
+            $table->string('charge')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('store_timimgs');
+        Schema::dropIfExists('country_shippings');
     }
 };
